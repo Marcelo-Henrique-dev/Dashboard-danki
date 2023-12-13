@@ -140,6 +140,9 @@ body{
     gap: 10px;
     position: relative;
 }
+.container-main{
+    display: flex;
+}
 .icon-pesquisa{
     background-color: #d6d6d6;
     padding: 8px;
@@ -232,6 +235,15 @@ body{
     background-color: white;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.panel::-webkit-scrollbar{
+    width: 3px;
+}
+.panel::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 3px;
 }
 .panel h2{
     color: #7f7f7f;
@@ -245,4 +257,45 @@ body{
     margin-top: 10px;
     line-height: 25px;
     text-align: justify;
+}
+
+/* ÚLTIMAS ATUALIZAÇÕES */
+
+.last-up{
+    width: 20%;
+    background-color: #eaebeb;
+    padding: 20px;
+    overflow-y: scroll;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    height: calc(100vh - 77px);
+}
+.last-up::-webkit-scrollbar{
+    width: 5px;
+}
+.last-up::-webkit-scrollbar-track{
+    background-color: #ddd;
+}
+.last-up::-webkit-scrollbar-thumb{
+    background-color: #bbb;
+    border-radius: 3px;
+}
+.atv-topo h2{
+    color: #7f7f7f;
+    font-size: 23px;
+    padding: 15px;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+}
+.atv-reg{
+    padding: 15px 10px;
+    border-left: 1px solid #bbb;
+}
+.atv-reg h2{
+    color: #bbb;
+    font-size: 19px;
+    font-weight: normal;
+}
+.atv-reg p{
+    color: #b2b2b2;
+    font-size: 15px;
 }

@@ -7,19 +7,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    outline: 0;
 }
 html, body{
     background-color: #faf9fc;
     height: 100%;
 }
+body{
+    display: flex;
+}
 
 /* SIDEBAR */
 
 .sidebar{
-    width: 20%;
     background: linear-gradient(180deg, rgba(45,48,53,1) 0%, rgba(31,31,32,1) 56%, rgba(15,15,15,1) 100%);
     height: 100%;
-    max-width: 300px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -97,4 +100,59 @@ html, body{
 }
 .social-media a:hover{
     color: #6d3888;
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+    width: calc(100% - 300px);
+    height: 100%;
+}
+.main-content header{
+    background-color: #fff;
+    padding: 20px 15px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+}
+.icon-pesquisa{
+    background-color: #d6d6d6;
+    padding: 8px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.6s;
+    position: relative;
+    z-index: 2;
+}
+.icon-pesquisa:hover{
+    background-color: #bbb;
+}
+.icon-pesquisa.active{
+    background-color: #bbb;
+}
+.pesquisa-campo form{
+    display: inline-block;
+}
+.pesquisa-campo input[type=text]{
+    width: 0;
+    transition: 0.6s;
+    visibility: hidden;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    font-size: 16px;
+    margin-left: -30px;
+    height: 33px;
+}
+.pesquisa-campo input[type=text].active{
+    width: 200px;
+    padding-left: 35px;
+    visibility: visible;
+    z-index: 1;
+    position: relative;
+}
+.pesquisa-campo input[type=text]:focus{
+    border-color: #bbb;
 }

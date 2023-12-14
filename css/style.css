@@ -46,7 +46,6 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .topo h3{
     color: white;
@@ -55,15 +54,22 @@ body{
     color: #717171;
     text-decoration: none;
     transition: 0.6s;
+    font-size: 20px;
 }
 .topo a:hover{
     color: #6d3888;
 }
 .menu{
     padding: 30px;
+    overflow-y: scroll;
+    margin-bottom: 60px;
+}
+.menu::-webkit-scrollbar{
+    width: 0;
 }
 .menu ul{
     list-style: none;
+    max-height: calc(100vh - 420px);
 }
 .menu ul li{
     margin-bottom: 20px;
@@ -228,7 +234,20 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    overflow-y: scroll;
     justify-content: space-between;
+    height: calc(100vh - 77px);
+}
+
+.content-1::-webkit-scrollbar{
+    width: 5px;
+}
+.content-1::-webkit-scrollbar-track{
+    background-color: #ddd;
+}
+.content-1::-webkit-scrollbar-thumb{
+    background-color: #bbb;
+    border-radius: 3px;
 }
 .panel{
     width: 100%;
@@ -285,10 +304,16 @@ body{
     padding: 15px;
     font-weight: normal;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 .atv-reg{
-    padding: 15px 10px;
+    padding: 15px 20px;
     border-left: 1px solid #bbb;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.atv-reg:nth-of-type(2){
+    border-top: 1px solid #ccc;
 }
 .atv-reg h2{
     color: #bbb;
@@ -298,4 +323,18 @@ body{
 .atv-reg p{
     color: #b2b2b2;
     font-size: 15px;
+}
+.circle-atv{
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    background-color: #eaebeb;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.atv-reg:last-child .circle-atv:last-child{
+    top: auto;
+    bottom: -12px;
 }

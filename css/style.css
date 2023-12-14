@@ -30,7 +30,8 @@ body{
 
 .sidebar{
     background: linear-gradient(180deg, rgba(45,48,53,1) 0%, rgba(31,31,32,1) 56%, rgba(15,15,15,1) 100%);
-    width: 300px;
+    width: 20%;
+    max-width: 300px;
     min-height: 100vh;
     position: relative;
 }
@@ -61,7 +62,7 @@ body{
 }
 .menu{
     padding: 30px;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-bottom: 60px;
 }
 .menu::-webkit-scrollbar{
@@ -113,9 +114,7 @@ body{
 .social-media{
     text-align: center;
     padding: 20px 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    position: relative;
-    bottom: 50px;
+    box-shadow: 0 -5px 50px rgba(255, 255, 255, 0.05);
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -141,10 +140,13 @@ body{
     padding: 20px 15px;
     border-bottom: 2px solid #ccc;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
     position: relative;
+}
+.icon-container{
+    display: flex;
+    gap: 10px;
 }
 .container-main{
     display: flex;
@@ -181,7 +183,7 @@ body{
     height: 33px;
 }
 .pesquisa-campo input[type=text].active{
-    width: 200px;
+    width: 150px;
     padding-left: 35px;
     visibility: visible;
     z-index: 1;
@@ -217,9 +219,83 @@ body{
     font-weight: bold;
     font-size: 15px;
 }
+.notification-box{
+    position: absolute;
+    right: 100px;
+    z-index: 999;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 0.6s;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.notification-box *{
+    display: none;
+}
+.notification-on{
+    padding: 20px 30px;
+    visibility: visible;
+    width: 400px;
+    height: 400px;
+}
+.notification-on *{
+    display: block;
+}
+.notification-box-single{
+    position: relative;
+    margin-bottom: 10px;
+}
+.notification-box-single span{
+    position: absolute;
+    left: -60px;
+    top: 40px;
+    color: #ed7387;
+    font-size: 15px;
+    transform: rotate(-90deg);
+}
+.notification-box-single span i{
+    color: #ed7387;
+}
+.notification-single{
+    border-left: 2px solid #ccc;
+    padding: 0 2%;
+}
+.notification-single h2{
+    font-size: 20px;
+    font-weight: normal;
+    color: #717171;
+}
+.notification-single p{
+    color: #aaa;
+    font-style: 18px;
+}
+.nome-user{
+    display: none;
+}
+
+.notification-box::-webkit-scrollbar{
+    width: 5px;
+}
+.notification-box::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+.notification-box::-webkit-scrollbar-track{
+    background-color: white;
+}
 .nome-user h2{
     font-weight: normal;
-    font-size: 22px;
+    font-size: 23px;
+    color: #a7a7a7;
+    cursor: pointer;
+}
+.title{
+    font-weight: normal;
+    font-size: 18px;
     color: #a7a7a7;
 }
 
@@ -233,10 +309,10 @@ body{
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
     justify-content: space-between;
     height: calc(100vh - 77px);
+    gap: 15px;
 }
 
 .content-1::-webkit-scrollbar{
@@ -255,7 +331,7 @@ body{
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     max-height: 200px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .panel::-webkit-scrollbar{
     width: 3px;
@@ -284,7 +360,7 @@ body{
     width: 20%;
     background-color: #eaebeb;
     padding: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     height: calc(100vh - 77px);
 }
@@ -337,4 +413,60 @@ body{
 .atv-reg:last-child .circle-atv:last-child{
     top: auto;
     bottom: -12px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px){
+    .last-up{
+        display: none;
+    }
+    .content-1{
+        width: 100%;
+    }
+    .w50{
+        width: 100%!important;
+    }
+    .sidebar{
+        width: 0;
+        transition: 0.6s;
+        overflow: hidden;
+    }
+    .sidebar .content-sidebar{
+        align-items: center;
+    }
+    .topo{
+        justify-content: center;
+        width: 100%;
+    }
+    .sidebar-on{
+        overflow: hidden;
+        width: 100px;
+        visibility: visible;
+    }
+    .topo h3{
+        display: none;
+    }
+    .menu ul li{
+        border: 0;
+    }
+    .menu ul li i:last-child{
+        display: none;
+    }
+    .menu ul li a span{
+        display: none;
+    }
+    .social-media{
+        width: 100%;
+        padding: 20px;
+    }
+    .main-content{
+        width: 100%;
+    }
+    .nome-user{
+        display: block;
+    }
+    .title{
+        display: none;
+    }
 }
